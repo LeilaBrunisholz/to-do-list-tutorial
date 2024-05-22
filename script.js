@@ -25,8 +25,15 @@ list.insertAdjacentHTML(position,text);
 
 addToDo("Drink Coffee");
 
-//ended 8:20
-
+document.addEventListener("keyup", function(){
+    if (event.keyCode==13){
+        const toDo = inputValue;
+        if (toDo){
+            addToDo(ToDo);
+        }
+        inputValue =""
+    }
+})
 
 
 
