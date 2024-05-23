@@ -81,3 +81,26 @@ document.addEventListener("keyUp",function(even){
     }
 });
 
+function completeToDo(element){
+    element.classList.toggle(CHECK);
+    element.classList.toggle(UNCHECK);
+    
+    LIST[element.id].done = LIST[element.id].done ? false : true;
+}
+
+function removeToDo(element){
+    element.parentNode.parentNode.removeChild(element.parentNode);
+    
+    LIST[element.id].trash = true;
+}
+
+
+list.addEventListener("click", function(event){
+    const element = event.target; 
+    const elementJob = element.attributesjobvalue; 
+    
+    if(elementJob == "complete"){
+        completeToDo(element);
+    }else if(elementJob == "delete"){
+        removeToDo(element);
+    }
