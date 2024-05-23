@@ -103,4 +103,13 @@ list.addEventListener("click", function(event){
         completeToDo(element);
     }else if(elementJob == "delete"){
         removeToDo(element);
-    }
+    }element.parentNode.parentNode.removeChild(element.parentNode);
+    
+    LIST[element.id].trash = true;
+}
+
+
+    
+    // add item to localstorage ( this code must be added where the LIST array is updated)
+    localStorage.setItem("TODO", JSON.stringify(LIST));
+});
